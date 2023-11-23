@@ -1,32 +1,31 @@
-import React, {useState} from 'react';
-import styles from './SearchBar.module.css'
+import React, { useState, useCallback } from "react";
+import "./SearchBar.module.css";
 
-function SearchBar() {
-    const [searchInput, setSearchInput] = useState("");
+const SearchBar = (props) => {
+  const [searchInput, setSearchInput] = useState("");
 
-    const tracks = [
-        {
-            name: 'song 1',
-            artist: 'artist 1'
-        }
-    ]
+  const handleChange = useCallback((e) => {
+    e.preventDefault();
+    setSearchInput(e.target.value);
+  }, []);
 
-    const handleChange = (e) => {
-        e.preventDefault();
-        setSearchInput(e.target.value);
-    }
+  const search = useCallback(() => {
+    props.onSearch(searchInput);
+  }, [props.onSearch, searchInput]);
 
-    return (
-        <>
-        <input 
-            className={styles.searchbar}
-            type="search"
-            placeholder='search'
-            onChange={handleChange}
-            value={searchInput}
-        />
-        </>
-    )
-}
+  return (
+    <div className="SearchBar">
+      <input
+        type="text"
+        placeholder="Find a song..."
+        onChange={handleChange}
+        value={searchInput}
+      />
+      <button type="submit" className="SearchButton">
+        Search
+      </button>
+    </div>
+  );
+};
 
 export default SearchBar;
