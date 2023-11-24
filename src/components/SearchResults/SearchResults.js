@@ -1,15 +1,15 @@
 import React from "react";
+
+import styles from "./SearchResults.module.css"
+
 import Tracklist from "../Tracklist/Tracklist";
-import "./SearchResults.module.css"
 
 const SearchResults = (props) => {
   return (
-    <>
-      <div className="SearchResults">
+      <div className={styles.searchResults}>
         <h2>Results</h2>
         <Tracklist tracks={props.searchResults} />
       </div>
-    </>
   );
 };
 

@@ -6,6 +6,7 @@ html,
 
 html {
   font-size: 18px;
+  margin: 0;
 }
 
 h1 {
@@ -26,7 +27,7 @@ h2 {
   font-size: 1.55rem;
 }
 
-.App {
+.app {
   height: 100%;
   padding: 0 17% 10% 17%;
   background-image: url("./jammming-background.avif");
@@ -38,14 +39,14 @@ h2 {
   color: #fff;
 }
 
-.App-playlist {
+.app_playlist {
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  width: 100%;
 }
 
 @media only screen and (max-width: 1020px) {
-  .App-playlist {
+  .app_playlist {
     align-items: center;
     flex-direction: column;
   }
