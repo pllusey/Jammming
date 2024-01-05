@@ -5,6 +5,7 @@ import Playlist from "../Playlist/Playlist";
 import SearchBar from "../SearchBar/SearchBar";
 import SearchResults from "../SearchResults/SearchResults";
 import Spotify from "../../util/spotify"
+import PlaylistList from "../PlaylistList/PlaylistList";
 
 const App = () => {
   const [searchResults, setSearchResults] = useState([]);
@@ -59,6 +60,7 @@ const App = () => {
             onRemove={removeTrack}
             onSave={savePlaylist}
           />
+          <PlaylistList />
         </div>
       </div>
     </div>
